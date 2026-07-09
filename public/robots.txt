@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diogogs.github.io/sitemap.xml

@@ -282,6 +282,20 @@ button.btn {
   box-shadow: 0 1px 3px rgba(30, 42, 56, 0.05);
 }
 
+.card-media {
+  display: block;
+  margin: -1.4rem -1.5rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .card-head {
   display: flex;
   justify-content: space-between;
