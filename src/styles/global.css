@@ -1,0 +1,166 @@
+/* Sober, typography-first. One accent colour (shared with the energia-forecast dashboard). */
+
+:root {
+  --ink: #1e2a38;
+  --ink-secondary: #4a5568;
+  --ink-muted: #8a94a3;
+  --accent: #2a5a8c;
+  --surface: #ffffff;
+  --surface-alt: #f5f7fa;
+  --line: #e2e6eb;
+  --max-width: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6e9ee;
+    --ink-secondary: #b0b8c4;
+    --ink-muted: #7a8494;
+    --accent: #7aabdc;
+    --surface: #14181e;
+    --surface-alt: #1c2129;
+    --line: #2a313b;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  font-weight: 650;
+}
+
+h1 {
+  font-size: 1.7rem;
+  margin: 2.5rem 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 2.75rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.25rem;
+}
+
+p {
+  margin: 0.75rem 0;
+  color: var(--ink-secondary);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 1.2rem;
+  color: var(--ink-secondary);
+}
+
+li {
+  margin: 0.35rem 0;
+}
+
+/* Header nav */
+.site-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-header .brand {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+/* Meta line (dates, places) */
+.meta {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+/* Project / entry cards — flat, line-separated, no boxes */
+.entry {
+  margin: 1.5rem 0;
+}
+
+.entry .links {
+  font-size: 0.9rem;
+}
+
+.entry .links a + a::before {
+  content: "· ";
+  color: var(--ink-muted);
+  margin: 0 0.35rem 0 0.1rem;
+}
+
+/* Tag row */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tags span {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0.05rem 0.45rem;
+}

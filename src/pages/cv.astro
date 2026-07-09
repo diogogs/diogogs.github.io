@@ -1,0 +1,156 @@
+---
+import Base from "../layouts/Base.astro";
+// Content carried over from the iterated fpdf CV (v14), plus the energia-forecast project.
+// This page is the CV's single source of truth: print to PDF for a sendable copy.
+---
+
+<Base title="CV — Diogo Guimarães Silva">
+  <div class="cv">
+    <h1>Diogo Guimarães Silva</h1>
+    <p class="meta">
+      Full-Stack Software Developer | AI/ML — Lisbon, Portugal<br />
+      <a href="mailto:dgsilvacr2017@gmail.com">dgsilvacr2017@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/diogo-guimaraes-silva">linkedin.com/in/diogo-guimaraes-silva</a> ·
+      <a href="https://github.com/diogogs">github.com/diogogs</a>
+    </p>
+
+    <p>
+      3+ years building production web apps and AI solutions. Developed OCR systems at Banco
+      BPI with Python and TensorFlow, now building full-stack applications at Bitcliq with
+      Flask, Node.js, and React. Working towards my CS degree at ISCTE on the side.
+    </p>
+
+    <h2>Professional experience</h2>
+
+    <div class="entry">
+      <h3>Software Developer</h3>
+      <p class="meta">Bitcliq · Caldas da Rainha — September 2023 to present</p>
+      <ul>
+        <li>
+          Built features and full applications from scratch across 7+ projects: Flask and
+          Node.js APIs, React and C# frontends
+        </li>
+        <li>
+          Designed and documented 10+ REST APIs for internal platform integrations and
+          third-party services
+        </li>
+        <li>
+          Developed standalone tools in Python and React, and worked on mobile projects with
+          React Native
+        </li>
+        <li>
+          Debugged and fixed production issues across performance, security, and UX in a
+          small team serving external clients
+        </li>
+        <li>Wrote and optimized queries across MySQL, SQL Server, and InfluxDB</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <h3>AI Development Intern</h3>
+      <p class="meta">Banco BPI — CEIA · Lisbon — August 2022 to July 2023</p>
+      <ul>
+        <li>
+          Built OCR and AI tools to improve financial document processing using Python,
+          Tesseract, OpenCV, and TensorFlow
+        </li>
+        <li>
+          Analyzed preprocessing approaches and tested different pipelines to find the best
+          model accuracy with Scikit-learn and Pandas
+        </li>
+        <li>Automated monthly reports on model performance and presented results to management</li>
+      </ul>
+    </div>
+
+    <h2>Selected project</h2>
+
+    <div class="entry">
+      <h3>energia-forecast — day-ahead energy forecasting in production</h3>
+      <p class="meta">
+        2026 · personal ·
+        <a href="https://github.com/diogogs/energia-forecast">github.com/diogogs/energia-forecast</a>
+      </p>
+      <ul>
+        <li>
+          End-to-end ML system forecasting Portuguese electricity demand and MIBEL day-ahead
+          prices, live on free-tier infrastructure (GitHub Actions, Neon Postgres, Render,
+          Streamlit Cloud)
+        </li>
+        <li>
+          Leakage-free rolling-origin backtesting (publication-time legality, as-of data
+          access): demand MAPE 2.8% and price P50 MAE 13.2 EUR/MWh, both beating naive
+          baselines; P10-P90 intervals calibrated with conformalized quantile regression
+        </li>
+        <li>
+          Daily autonomous operation: idempotent multi-source ingestion, write-once forecast
+          records scored publicly against outcomes, monitoring, weekly backups
+        </li>
+        <li>
+          Built with AI-assisted development (Claude Code) under my architecture and review;
+          design decisions recorded as ADRs
+        </li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+
+    <div class="entry">
+      <h3>BSc Computer Engineering (ongoing)</h3>
+      <p class="meta">ISCTE — Instituto Universitário de Lisboa — 2025 to present</p>
+    </div>
+
+    <div class="entry">
+      <h3>Computer Engineering</h3>
+      <p class="meta">Universidade de Aveiro — 2019 to 2022</p>
+    </div>
+
+    <h2>Technical skills</h2>
+    <ul>
+      <li><strong>Core:</strong> Python, JavaScript, Java, C#, SQL, HTML/CSS</li>
+      <li><strong>AI/ML:</strong> LightGBM, Scikit-learn, Pandas, TensorFlow, OpenCV, Tesseract</li>
+      <li><strong>Web &amp; mobile:</strong> Flask, FastAPI, Node.js, React, React Native, .NET, Docker</li>
+      <li><strong>Data:</strong> PostgreSQL, MySQL, SQL Server, InfluxDB</li>
+    </ul>
+
+    <h2>Certifications</h2>
+    <ul>
+      <li>IBM Data Science Professional Certificate — Coursera, 2024 (10-course specialization)</li>
+      <li>Google Cloud Data Analytics Certificate — Google Cloud, 2024</li>
+      <li>Machine Learning A-Z — Udemy, 2024</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <ul>
+      <li>Portuguese — native</li>
+      <li>English — fluent</li>
+    </ul>
+  </div>
+</Base>
+
+<style>
+  /* Print: the page IS the PDF. Hide chrome, tighten spacing, keep ink dark. */
+  @media print {
+    :global(.site-header),
+    :global(.site-footer) {
+      display: none;
+    }
+    :global(main) {
+      max-width: none;
+      padding: 0;
+    }
+    .cv {
+      font-size: 11px;
+      color: #1e2a38;
+    }
+    .cv :global(h1) {
+      margin-top: 0;
+    }
+    .cv :global(h2) {
+      margin: 1.1rem 0 0.5rem;
+    }
+    .cv :global(a) {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+</style>

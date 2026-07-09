@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Diogo Silva — full-stack developer, ML systems." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="brand">Diogo Silva</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts/">Writing</a>
+        <a href="/cv/">CV</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      Diogo Guimarães Silva ·
+      <a href="https://github.com/diogogs">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/diogo-guimaraes-silva">LinkedIn</a> ·
+      <a href="mailto:dgsilvacr2017@gmail.com">dgsilvacr2017@gmail.com</a>
+    </footer>
+  </body>
+</html>
