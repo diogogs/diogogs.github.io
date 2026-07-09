@@ -4,9 +4,14 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  hero?: boolean;
 }
 
-const { title, description = "Diogo Silva — full-stack developer, ML systems." } = Astro.props;
+const {
+  title,
+  description = "Diogo Silva — full-stack developer, ML systems.",
+  hero = false,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -18,15 +23,33 @@ const { title, description = "Diogo Silva — full-stack developer, ML systems."
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body>
-    <header class="site-header">
-      <a href="/" class="brand">Diogo Silva</a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/posts/">Writing</a>
-        <a href="/cv/">CV</a>
-      </nav>
-    </header>
+  <body class={hero ? "has-hero" : ""}>
+    {
+      hero ? (
+        <div class="hero-wrap">
+          <header class="site-header">
+            <a href="/" class="brand">Diogo Silva</a>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/posts/">Writing</a>
+              <a href="/cv/">CV</a>
+            </nav>
+          </header>
+          <div class="hero">
+            <slot name="hero" />
+          </div>
+        </div>
+      ) : (
+        <header class="site-header">
+          <a href="/" class="brand">Diogo Silva</a>
+          <nav>
+            <a href="/">Home</a>
+            <a href="/posts/">Writing</a>
+            <a href="/cv/">CV</a>
+          </nav>
+        </header>
+      )
+    }
     <main>
       <slot />
     </main>

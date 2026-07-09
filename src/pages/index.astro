@@ -2,33 +2,43 @@
 import Base from "../layouts/Base.astro";
 ---
 
-<Base title="Diogo Silva — full-stack developer · ML systems">
-  <h1>Diogo Silva</h1>
-  <p class="meta">Full-stack developer · ML systems — Lisbon, Portugal</p>
-
-  <p>
-    I'm a software developer with three years of experience shipping production web
-    applications, currently at Bitcliq. My focus is moving toward data and ML systems: not
-    just models, but the engineering that makes them trustworthy in production — data
-    pipelines, leakage-free evaluation, serving, and monitoring.
-  </p>
+<Base title="Diogo Silva — full-stack developer · ML systems" hero>
+  <Fragment slot="hero">
+    <h1>Diogo Silva</h1>
+    <p class="tagline">Full-stack developer · ML systems — Lisbon, Portugal</p>
+    <p>
+      Three years shipping production web applications, now focused on data and ML systems:
+      not just models, but the engineering that makes them trustworthy in production.
+    </p>
+    <div class="actions">
+      <a class="btn btn-solid" href="/cv/">View CV</a>
+      <a class="btn btn-ghost" href="https://github.com/diogogs">GitHub</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/diogo-guimaraes-silva">LinkedIn</a>
+    </div>
+  </Fragment>
 
   <h2>Selected work</h2>
 
-  <div class="entry">
-    <h3>energia-forecast</h3>
+  <div class="card">
+    <div class="card-head">
+      <h3>energia-forecast</h3>
+      <span class="badge-live">Live</span>
+    </div>
     <p class="meta">2026 · personal project · in production</p>
     <p>
       A day-ahead forecasting system for Portuguese electricity demand and MIBEL market
       prices, running autonomously on free-tier infrastructure. Four public data sources
-      ingested daily; LightGBM models evaluated with a leakage-free rolling-origin backtest
-      (demand MAPE 2.8%, price P50 MAE 13.2 EUR/MWh, both beating their naive baselines);
-      conformally calibrated P10-P90 intervals; every forecast stored immutably and scored
-      in public against outcomes.
+      ingested daily, leakage-free rolling-origin evaluation, conformally calibrated
+      intervals, and every forecast stored immutably and scored in public against outcomes.
     </p>
+    <div class="stats">
+      <div><strong>2.8%</strong><span>demand MAPE (71-day backtest)</span></div>
+      <div><strong>13.2 €/MWh</strong><span>price P50 MAE vs 16.0 baseline</span></div>
+      <div><strong>€0/mo</strong><span>infrastructure cost</span></div>
+    </div>
     <p>
       Built end to end with AI-assisted development (Claude Code), with me as architect and
-      reviewer; the design decisions are recorded as ADRs in the repository.
+      reviewer; design decisions recorded as ADRs in the repository.
     </p>
     <p class="links">
       <a href="https://energia-forecast-bwwhirmyetaphmsk84dkqg.streamlit.app/">Dashboard</a>
@@ -43,25 +53,27 @@ import Base from "../layouts/Base.astro";
 
   <h2>Experience</h2>
 
-  <div class="entry">
-    <h3>Software Developer — Bitcliq</h3>
-    <p class="meta">September 2023 — present · Caldas da Rainha</p>
-    <p>
-      Features and full applications across 7+ projects: Flask and Node.js APIs, React and
-      C# frontends, React Native, and production debugging for external clients.
-    </p>
-  </div>
+  <div class="band">
+    <div class="entry">
+      <h3>Software Developer — Bitcliq</h3>
+      <p class="meta">September 2023 — present · Caldas da Rainha</p>
+      <p>
+        Features and full applications across 7+ projects: Flask and Node.js APIs, React and
+        C# frontends, React Native, and production debugging for external clients.
+      </p>
+    </div>
 
-  <div class="entry">
-    <h3>AI Development Intern — Banco BPI (CEIA)</h3>
-    <p class="meta">August 2022 — July 2023 · Lisbon</p>
-    <p>
-      OCR and document-processing tools for financial documents with Python, Tesseract,
-      OpenCV and TensorFlow.
-    </p>
-  </div>
+    <div class="entry">
+      <h3>AI Development Intern — Banco BPI (CEIA)</h3>
+      <p class="meta">August 2022 — July 2023 · Lisbon</p>
+      <p>
+        OCR and document-processing tools for financial documents with Python, Tesseract,
+        OpenCV and TensorFlow.
+      </p>
+    </div>
 
-  <p><a href="/cv/">Full CV →</a></p>
+    <p><a href="/cv/">Full CV →</a></p>
+  </div>
 
   <h2>Writing</h2>
   <p>

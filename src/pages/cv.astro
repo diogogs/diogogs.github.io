@@ -14,6 +14,10 @@ import Base from "../layouts/Base.astro";
       <a href="https://github.com/diogogs">github.com/diogogs</a>
     </p>
 
+    <p class="no-print">
+      <button class="btn btn-accent" onclick="window.print()">Download PDF</button>
+    </p>
+
     <p>
       3+ years building production web apps and AI solutions. Developed OCR systems at Banco
       BPI with Python and TensorFlow, now building full-stack applications at Bitcliq with
@@ -131,7 +135,8 @@ import Base from "../layouts/Base.astro";
   /* Print: the page IS the PDF. Hide chrome, tighten spacing, keep ink dark. */
   @media print {
     :global(.site-header),
-    :global(.site-footer) {
+    :global(.site-footer),
+    .no-print {
       display: none;
     }
     :global(main) {
