@@ -2,13 +2,16 @@
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base title="Writing — Diogo Silva">
-  <h1>Writing</h1>
-  <p>Technical write-ups of things I build.</p>
-
-  <div class="entry">
-    <h3>Building energia-forecast</h3>
-    <p class="meta">In progress</p>
+<Base
+  title="Writing — Diogo Silva"
+  bandTitle="Writing"
+  bandSubtitle="Technical write-ups of things I build."
+>
+  <div class="card">
+    <div class="card-head">
+      <h3>Building energia-forecast</h3>
+      <span class="meta">In progress</span>
+    </div>
     <p>
       How a day-ahead energy forecasting system was designed and put into production:
       temporal integrity (why most backtests quietly cheat), calibrated intervals, zero-cost

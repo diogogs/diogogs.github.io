@@ -181,6 +181,29 @@ li {
   margin-top: 1.6rem;
 }
 
+/* compact navy band for inner pages — same identity, smaller scale */
+.hero-wrap.compact {
+  padding-bottom: 2rem;
+}
+
+.page-band {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.1rem 1.25rem 0;
+}
+
+.page-band h1 {
+  font-size: 1.7rem;
+  margin: 0;
+  color: var(--on-navy);
+}
+
+.page-band p {
+  color: var(--on-navy-soft);
+  margin: 0.35rem 0 0;
+  font-size: 0.98rem;
+}
+
 /* ---------------------------------------------------------------- buttons */
 .btn {
   display: inline-flex;

@@ -5,13 +5,19 @@ interface Props {
   title: string;
   description?: string;
   hero?: boolean;
+  bandTitle?: string;
+  bandSubtitle?: string;
 }
 
 const {
   title,
   description = "Diogo Silva — full-stack developer, ML systems.",
   hero = false,
+  bandTitle,
+  bandSubtitle,
 } = Astro.props;
+
+const navy = hero || Boolean(bandTitle);
 ---
 
 <!doctype html>
@@ -23,10 +29,10 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class={hero ? "has-hero" : ""}>
+  <body class={navy ? "has-hero" : ""}>
     {
-      hero ? (
-        <div class="hero-wrap">
+      navy ? (
+        <div class={`hero-wrap${bandTitle ? " compact" : ""}`}>
           <header class="site-header">
             <a href="/" class="brand">Diogo Silva</a>
             <nav>
@@ -35,9 +41,16 @@ const {
               <a href="/cv/">CV</a>
             </nav>
           </header>
-          <div class="hero">
-            <slot name="hero" />
-          </div>
+          {hero ? (
+            <div class="hero">
+              <slot name="hero" />
+            </div>
+          ) : (
+            <div class="page-band">
+              <h1>{bandTitle}</h1>
+              {bandSubtitle && <p>{bandSubtitle}</p>}
+            </div>
+          )}
         </div>
       ) : (
         <header class="site-header">

@@ -4,7 +4,11 @@ import Base from "../layouts/Base.astro";
 // This page is the CV's single source of truth: print to PDF for a sendable copy.
 ---
 
-<Base title="CV — Diogo Guimarães Silva">
+<Base
+  title="CV — Diogo Guimarães Silva"
+  bandTitle="Curriculum vitae"
+  bandSubtitle="This page is print-ready — use Download PDF for a sendable copy."
+>
   <div class="cv">
     <h1>Diogo Guimarães Silva</h1>
     <p class="meta">
@@ -137,6 +141,7 @@ import Base from "../layouts/Base.astro";
 <style>
   /* Print: the page IS the PDF. Hide chrome, tighten spacing, keep ink dark. */
   @media print {
+    :global(.hero-wrap),
     :global(.site-header),
     :global(.site-footer),
     .no-print {
