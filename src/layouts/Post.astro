@@ -1,0 +1,17 @@
+---
+// Markdown post wrapper: maps .md frontmatter onto the Base layout's props.
+import Base from "./Base.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Base
+  title={frontmatter.title}
+  description={frontmatter.description}
+  bandTitle={frontmatter.bandTitle}
+  bandSubtitle={frontmatter.bandSubtitle}
+>
+  <article>
+    <slot />
+  </article>
+</Base>
